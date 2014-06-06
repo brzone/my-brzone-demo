@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<R>
+
+	<H>
+		<F n="TRADE_CODE">QHOUSEPERSONINFO</F>
+		<F n="TRADE_STAFF_ID">dwq</F>
+		<F n="TRADE_PASSWORD">dwq</F>
+		<F n="TRADE_IP">149.16.20.105</F>
+		<F n="TRADE_REQID">1</F>
+		<F n="TRADE_FLOWNO">20110428095957578657</F>
+	</H>
+
+	<B>
+		<S>
+			<F n="IH_ID">1</F>
+		</S>
+
+		<M>
+		</M>
+	</B>
+</R>

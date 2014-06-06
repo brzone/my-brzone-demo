@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<R>
+	<H>
+		<F n="RESULT_CODE">0</F>
+		<F n="RESULT_INFO">接口调用成功</F>
+		<F n="BUSI_RETURN_INFO">调用交易成功</F>
+		<F n="BUSI_RETURN_CODE">0</F>
+	</H>
+	<B>
+		<S />
+		<M>
+			<L>
+				<F n="PHONE"></F>
+				<F n="BIRTHDAY"></F>
+				<F n="NAME">张三</F>
+				<F n="CER_NO">315451564567445465</F>
+				<F n="NATION_CODE">44</F>
+				<F n="SEX">0</F>
+				<F n="POSTCODE"></F>
+				<F n="CER_CODE">01</F>
+				<F n="E_MAIL"></F>
+				<F n="DOMESTIC_ADDRESS">hdhasiyafdhkjahdshik5443212</F>
+			</L>
+		</M>
+	</B>
+</R>

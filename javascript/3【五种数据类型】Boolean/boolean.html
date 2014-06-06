@@ -1,0 +1,46 @@
+<html>
+	<head>
+			<title>boolean</title>
+			
+			<script>
+				
+					function	myWrite(somethings) {
+		
+						document.write(somethings + "<br/>");
+					}
+					
+					var rightGirl = true;
+					
+					//不能加单引号或者双引号，不然会是string类型
+					var yesBoy = 'false';
+					
+					
+					myWrite(typeof rightGirl);
+					
+					myWrite(typeof yesBoy);
+				
+					var message = "maybe";
+					
+					//'' 或者 null, 0、NaN、undefined，返回false;
+					var mB = Boolean(message);
+				
+					myWrite(mB);
+					
+					myWrite(Boolean(null));
+					
+					//age没有初始化，其值为undefined
+					var age;
+					myWrite(Boolean(age));
+					
+			</script>
+		
+	</head>
+	
+	
+	
+	
+	
+	
+	
+	
+</html>

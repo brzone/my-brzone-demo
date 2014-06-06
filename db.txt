@@ -1,0 +1,6 @@
+aa=bb
+username = boss_crm
+password = boss_crm
+savePath = D://lijiansssss.xls
+hasreadline = yes
+url = jdbc:oracle:thin:@180.200.3.171:38721:boss

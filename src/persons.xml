@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persons>
+	<person id="23">
+		<name>bush</name>
+		<age>25</age>
+		<department>
+			<id>1</id>
+			<name>GOV</name>
+		</department>
+		<description>president</description>
+	</person>
+	<person id="20">
+		<name>frank</name>
+		<age>28</age>
+		<department>
+			<id>2</id>
+			<name>IT</name>
+		</department>
+		<description>MVP</description>
+	</person>
+</persons>
+
+

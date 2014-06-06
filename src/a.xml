@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<R>
+	<H>
+		<F n="RESULT_CODE">0</F>
+		<F n="RESULT_INFO">接口调用成功</F>
+		<F n="BUSI_RETURN_INFO">调用交易成功</F>
+		<F n="BUSI_RETURN_CODE">0</F>
+	</H>
+	<B>
+		<S />
+		<M>
+			<L>
+				<F n="CX">3</F>
+				<F n="H_ID">1</F>
+				<F n="SZLC">1</F>
+				<F n="ZLC">5</F>
+				<F n="DT">1</F>
+				<F n="LP_ADDR">湖南省长沙市中南大学铁道学院校区内</F>
+				<F n="YSMJ">85</F>
+				<F n="JZMJ">85</F>
+				<F n="FWLB">1</F>
+				<F n="TX_W">1</F>
+				<F n="LJ">0</F>
+				<F n="JG">1</F>
+				<F n="YT">1</F>
+				<F n="LP_NAME">铁道学院通泰梅林苑</F>
+				<F n="DH">A1</F>
+				<F n="TX_S">1</F>
+				<F n="FH">101</F>
+				<F n="TX_T">2</F>
+			</L>
+			<L>
+				<F n="CX">4</F>
+				<F n="H_ID">2</F>
+				<F n="SZLC">1</F>
+				<F n="ZLC">5</F>
+				<F n="DT">1</F>
+				<F n="LP_ADDR">湖南省长沙市中南大学铁道学院校区内</F>
+				<F n="YSMJ">100</F>
+				<F n="JZMJ">100</F>
+				<F n="FWLB">2</F>
+				<F n="TX_W">3</F>
+				<F n="LJ">1</F>
+				<F n="JG">2</F>
+				<F n="YT">2</F>
+				<F n="LP_NAME">铁道学院通泰梅林苑</F>
+				<F n="DH">A1</F>
+				<F n="TX_S">2</F>
+				<F n="FH">102</F>
+				<F n="TX_T">3</F>
+			</L>
+			<L>
+				<F n="CX">3</F>
+				<F n="H_ID">3</F>
+				<F n="SZLC">2</F>
+				<F n="ZLC">5</F>
+				<F n="DT">1</F>
+				<F n="LP_ADDR">湖南省长沙市中南大学铁道学院校区内</F>
+				<F n="YSMJ">85</F>
+				<F n="JZMJ">85</F>
+				<F n="FWLB">1</F>
+				<F n="TX_W">1</F>
+				<F n="LJ">0</F>
+				<F n="JG">1</F>
+				<F n="YT">1</F>
+				<F n="LP_NAME">铁道学院通泰梅林苑</F>
+				<F n="DH">A1</F>
+				<F n="TX_S">1</F>
+				<F n="FH">201</F>
+				<F n="TX_T">2</F>
+			</L>
+			<L>
+				<F n="CX">4</F>
+				<F n="H_ID">4</F>
+				<F n="SZLC">2</F>
+				<F n="ZLC">5</F>
+				<F n="DT">1</F>
+				<F n="LP_ADDR">湖南省长沙市中南大学铁道学院校区内</F>
+				<F n="YSMJ">100</F>
+				<F n="JZMJ">100</F>
+				<F n="FWLB">2</F>
+				<F n="TX_W">3</F>
+				<F n="LJ">1</F>
+				<F n="JG">2</F>
+				<F n="YT">2</F>
+				<F n="LP_NAME">铁道学院通泰梅林苑</F>
+				<F n="DH">A1</F>
+				<F n="TX_S">2</F>
+				<F n="FH">202</F>
+				<F n="TX_T">3</F>
+			</L>
+			<L>
+				<F n="CX">3</F>
+				<F n="H_ID">5</F>
+				<F n="SZLC">3</F>
+				<F n="ZLC">5</F>
+				<F n="DT">1</F>
+				<F n="LP_ADDR">湖南省长沙市中南大学铁道学院校区内</F>
+				<F n="YSMJ">85</F>
+				<F n="JZMJ">85</F>
+				<F n="FWLB">1</F>
+				<F n="TX_W">1</F>
+				<F n="LJ">0</F>
+				<F n="JG">1</F>
+				<F n="YT">1</F>
+				<F n="LP_NAME">铁道学院通泰梅林苑</F>
+				<F n="DH">A1</F>
+				<F n="TX_S">1</F>
+				<F n="FH">301</F>
+				<F n="TX_T">2</F>
+			</L>
+			<L>
+				<F n="CX">4</F>
+				<F n="H_ID">6</F>
+				<F n="SZLC">3</F>
+				<F n="ZLC">5</F>
+				<F n="DT">1</F>
+				<F n="LP_ADDR">湖南省长沙市中南大学铁道学院校区内</F>
+				<F n="YSMJ">100</F>
+				<F n="JZMJ">100</F>
+				<F n="FWLB">2</F>
+				<F n="TX_W">3</F>
+				<F n="LJ">1</F>
+				<F n="JG">2</F>
+				<F n="YT">2</F>
+				<F n="LP_NAME">铁道学院通泰梅林苑</F>
+				<F n="DH">A1</F>
+				<F n="TX_S">2</F>
+				<F n="FH">302</F>
+				<F n="TX_T">3</F>
+			</L>
+			<L>
+				<F n="CX">3</F>
+				<F n="H_ID">7</F>
+				<F n="SZLC">4</F>
+				<F n="ZLC">5</F>
+				<F n="DT">1</F>
+				<F n="LP_ADDR">湖南省长沙市中南大学铁道学院校区内</F>
+				<F n="YSMJ">85</F>
+				<F n="JZMJ">85</F>
+				<F n="FWLB">1</F>
+				<F n="TX_W">1</F>
+				<F n="LJ">0</F>
+				<F n="JG">1</F>
+				<F n="YT">1</F>
+				<F n="LP_NAME">铁道学院通泰梅林苑</F>
+				<F n="DH">A1</F>
+				<F n="TX_S">1</F>
+				<F n="FH">401</F>
+				<F n="TX_T">2</F>
+			</L>
+			<L>
+				<F n="CX">4</F>
+				<F n="H_ID">8</F>
+				<F n="SZLC">4</F>
+				<F n="ZLC">5</F>
+				<F n="DT">1</F>
+				<F n="LP_ADDR">湖南省长沙市中南大学铁道学院校区内</F>
+				<F n="YSMJ">100</F>
+				<F n="JZMJ">100</F>
+				<F n="FWLB">2</F>
+				<F n="TX_W">3</F>
+				<F n="LJ">1</F>
+				<F n="JG">2</F>
+				<F n="YT">2</F>
+				<F n="LP_NAME">铁道学院通泰梅林苑</F>
+				<F n="DH">A1</F>
+				<F n="TX_S">2</F>
+				<F n="FH">402</F>
+				<F n="TX_T">3</F>
+			</L>
+			<L>
+				<F n="CX">3</F>
+				<F n="H_ID">9</F>
+				<F n="SZLC">5</F>
+				<F n="ZLC">5</F>
+				<F n="DT">1</F>
+				<F n="LP_ADDR">湖南省长沙市中南大学铁道学院校区内</F>
+				<F n="YSMJ">85</F>
+				<F n="JZMJ">85</F>
+				<F n="FWLB">1</F>
+				<F n="TX_W">1</F>
+				<F n="LJ">0</F>
+				<F n="JG">1</F>
+				<F n="YT">1</F>
+				<F n="LP_NAME">铁道学院通泰梅林苑</F>
+				<F n="DH">A1</F>
+				<F n="TX_S">1</F>
+				<F n="FH">501</F>
+				<F n="TX_T">2</F>
+			</L>
+			<L>
+				<F n="CX">4</F>
+				<F n="H_ID">10</F>
+				<F n="SZLC">5</F>
+				<F n="ZLC">5</F>
+				<F n="DT">1</F>
+				<F n="LP_ADDR">湖南省长沙市中南大学铁道学院校区内</F>
+				<F n="YSMJ">100</F>
+				<F n="JZMJ">100</F>
+				<F n="FWLB">2</F>
+				<F n="TX_W">3</F>
+				<F n="LJ">1</F>
+				<F n="JG">2</F>
+				<F n="YT">2</F>
+				<F n="LP_NAME">铁道学院通泰梅林苑</F>
+				<F n="DH">A1</F>
+				<F n="TX_S">2</F>
+				<F n="FH">502</F>
+				<F n="TX_T">3</F>
+			</L>
+		</M>
+	</B>
+</R>

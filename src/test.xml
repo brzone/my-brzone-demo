@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+
+<!-- 根元素HD -->
+<HD> 
+
+<!-- 根元素下有俩个子元素disk -->
+  <disk name="C"> 
+  
+     <!-- 一个Disk包含了子元素:  capacity ,directories,files -->
+    <capacity username = "小黑">8G</capacity> 
+    <directories>200</directories> 
+    <files>1580</files> 
+  </disk> 
+
+  <disk name="D"> 
+    <capacity username = "小白">10G</capacity> 
+    <directories>500</directories> 
+    <files>3000</files> 
+  </disk> 
+</HD> 

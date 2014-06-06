@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pool>
+   <datasource>
+         <sourcename>oracle</sourcename>
+         <name>oracle.jdbc.driver.OracleDriver</name>
+         <url>jdbc:oracle:thin:@//149.16.20.37:1521/transfer</url>
+         <username>edata</username>
+         <password>edata</password>
+         <size>20</size>
+   </datasource>
+
+
+</pool>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<我的资料>
+	<我的电话>
+			<phone character="工作电话">110</phone>
+			<phone character="家庭电话">119</phone>
+	</我的电话>
+
+	<email date="2008-08-08">oneworld_dream@126.com</email>
+	<email date="2010-08-08">brzone@live.cn</email>
+
+
+</我的资料>

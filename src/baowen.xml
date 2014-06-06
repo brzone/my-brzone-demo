@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<R>
+	<H>
+		<F n="BUSI_RETURN_INFO">调用交易成功</F>
+		<F n="RESULT_CODE">0</F>
+		<F n="RESULT_INFO">调用成功</F>
+		<F n="BUSI_RETURN_CODE">0</F>
+	</H>
+	<B>
+		<S />
+		<M>
+			<L>
+				<F n="TRADE_4"></F>
+				<F n="INV_DAYS"></F>
+				<F n="TRADE_3">59</F>
+				<F n="REPORT_LIMIT"></F>
+				<F n="INV_TEMPLATE"></F>
+				<F n="TRADE_2">1</F>
+				<F n="INV_MONEY"></F>
+				<F n="TRADE_1">1</F>
+				<F n="REPORT_INTERVAL"></F>
+				<F n="INV_S_RATE"></F>
+				<F n="DOWN_INTERVAL"></F>
+				<F n="STOP_FLAG">0</F>
+				<F n="INV_TITEL"></F>
+				<F n="INV_M_RATE"></F>
+				<F n="TABLENAME">TD_INV_BUY_RATIFY</F>
+			</L>
+			<L>
+				<F n="ID">5</F>
+				<F n="M_VAL">0</F>
+				<F n="TABLENAME">TD_INV_PMAXVL</F>
+			</L>
+			<L>
+				<F n="NAME">陆路运输</F>
+				<F n="INNER_CODE">030101</F>
+				<F n="ID">5</F>
+				<F n="TABLENAME">TB_PUB_LEVY_ITEM</F>
+			</L>
+			<L>
+				<F n="NAME">水路运输</F>
+				<F n="INNER_CODE">030102</F>
+				<F n="ID">6</F>
+				<F n="TABLENAME">TB_PUB_LEVY_ITEM</F>
+			</L>
+			<L>
+				<F n="NAME">航空运输</F>
+				<F n="INNER_CODE">030103</F>
+				<F n="ID">7</F>
+				<F n="TABLENAME">TB_PUB_LEVY_ITEM</F>
+			</L>
+			<L>
+				<F n="NAME">管道运输</F>
+				<F n="INNER_CODE">030104</F>
+				<F n="ID">8</F>
+				<F n="TABLENAME">TB_PUB_LEVY_ITEM</F>
+			</L>
+			<L>
+				<F n="NAME">装卸搬运</F>
+				<F n="INNER_CODE">030105</F>
+				<F n="ID">9</F>
+				<F n="TABLENAME">TB_PUB_LEVY_ITEM</F>
+			</L>
+			<L>
+				<F n="NAME">建筑</F>
+				<F n="INNER_CODE">030201</F>
+				<F n="ID">11</F>
+				<F n="TABLENAME">TB_PUB_LEVY_ITEM</F>
+			</L>
+			<L>
+				<F n="NAME">安装</F>
+				<F n="INNER_CODE">030202</F>
+				<F n="ID">12</F>
+				<F n="TABLENAME">TB_PUB_LEVY_ITEM</F>
+			</L>
+			<L>
+				<F n="NAME">修缮</F>
+				<F n="INNER_CODE">030203</F>
+				<F n="ID">13</F>
+				<F n="TABLENAME">TB_PUB_LEVY_ITEM</F>
+			</L>
+			<L>
+				<F n="NAME">装饰</F>
+				<F n="INNER_CODE">030204</F>
+				<F n="ID">14</F>
+				<F n="TABLENAME">TB_PUB_LEVY_ITEM</F>
+			</L>
+			<L>
+				<F n="NAME">其他工程作业</F>
+				<F n="INNER_CODE">030205</F>
+				<F n="ID">15</F>
+				<F n="TABLENAME">TB_PUB_LEVY_ITEM</F>
+			</L>
+			<L>
+				<F n="NAME">金融</F>
+				<F n="INNER_CODE">030301</F>
+				<F n="ID">17</F>
+				<F n="TABLENAME">TB_PUB_LEVY_ITEM</F>
+			</L>
+			<L>
+				<F n="NAME">保险</F>
+				<F n="INNER_CODE">030302</F>
+				<F n="ID">18</F>
+				<F n="TABLENAME">TB_PUB_LEVY_ITEM</F>
+			</L>
+			<L>
+				<F n="NAME">邮政</F>
+				<F n="INNER_CODE">030401</F>
+				<F n="ID">20</F>
+				<F n="TABLENAME">TB_PUB_LEVY_ITEM</F>
+			</L>
+			<L>
+				<F n="NAME">电信</F>
+				<F n="INNER_CODE">030402</F>
+				<F n="ID">21</F>
+				<F n="TABLENAME">TB_PUB_LEVY_ITEM</F>
+			</L>
+			<L>
+				<F n="NAME">文化业</F>
+				<F n="INNER_CODE">030501</F>
+				<F n="ID">23</F>
+				<F n="TABLENAME">TB_PUB_LEVY_ITEM</F>
+			</L>
+			<L>
+				<F n="NAME">体育业</F>
+				<F n="INNER_CODE">030502</F>
+				<F n="ID">24</F>
+				<F n="TABLENAME">TB_PUB_LEVY_ITEM</F>
+			</L>
+			<L>
+				<F n="NAME">歌舞厅</F>
+				<F n="INNER_CODE">030601</F>
+				<F n="ID">26</F>
+				<F n="TABLENAME">TB_PUB_LEVY_ITEM</F>
+			</L>
+			<L>
+				<F n="NAME">音乐茶座</F>
+				<F n="INNER_CODE">030602</F>
+				<F n="ID">27</F>
+				<F n="TABLENAME">TB_PUB_LEVY_ITEM</F>
+			</L>
+			<L>
+				<F n="NAME">台球</F>
+				<F n="INNER_CODE">030603</F>
+				<F n="ID">28</F>
+				<F n="TABLENAME">TB_PUB_LEVY_ITEM</F>
+			</L>
+			<L>
+				<F n="NAME">高尔夫球</F>
+				<F n="INNER_CODE">030604</F>
+				<F n="ID">29</F>
+				<F n="TABLENAME">TB_PUB_LEVY_ITEM</F>
+			</L>
+			<L>
+				<F n="NAME">保龄球</F>
+				<F n="INNER_CODE">030605</F>
+				<F n="ID">30</F>
+				<F n="TABLENAME">TB_PUB_LEVY_ITEM</F>
+			</L>
+			<L>
+				<F n="NAME">游艺</F>
+				<F n="INNER_CODE">030606</F>
+				<F n="ID">31</F>
+				<F n="TABLENAME">TB_PUB_LEVY_ITEM</F>
+			</L>
+			<L>
+				<F n="NAME">网吧</F>
+				<F n="INNER_CODE">030607</F>
+				<F n="ID">314</F>
+				<F n="TABLENAME">TB_PUB_LEVY_ITEM</F>
+			</L>
+			<L>
+				<F n="NAME">代理业</F>
+				<F n="INNER_CODE">030701</F>
+				<F n="ID">33</F>
+				<F n="TABLENAME">TB_PUB_LEVY_ITEM</F>
+			</L>
+			<L>
+				<F n="NAME">旅店业</F>
+				<F n="INNER_CODE">030702</F>
+				<F n="ID">34</F>
+				<F n="TABLENAME">TB_PUB_LEVY_ITEM</F>
+			</L>
+			<L>
+				<F n="NAME">饮食业</F>
+				<F n="INNER_CODE">030703</F>
+				<F n="ID">35</F>
+				<F n="TABLENAME">TB_PUB_LEVY_ITEM</F>
+			</L>
+			<L>
+				<F n="NAME">旅游业</F>
+				<F n="INNER_CODE">030704</F>
+				<F n="ID">36</F>
+				<F n="TABLENAME">TB_PUB_LEVY_ITEM</F>
+			</L>
+			<L>
+				<F n="NAME">仓储业</F>
+				<F n="INNER_CODE">030705</F>
+				<F n="ID">37</F>
+				<F n="TABLENAME">TB_PUB_LEVY_ITEM</F>
+			</L>
+			<L>
+				<F n="NAME">房屋租赁</F>
+				<F n="INNER_CODE">03070601</F>
+				<F n="ID">39</F>
+				<F n="TABLENAME">TB_PUB_LEVY_ITEM</F>
+			</L>
+			<L>
+				<F n="NAME">其他租赁</F>
+				<F n="INNER_CODE">03070602</F>
+				<F n="ID">40</F>
+				<F n="TABLENAME">TB_PUB_LEVY_ITEM</F>
+			</L>
+			<L>
+				<F n="NAME">广告业</F>
+				<F n="INNER_CODE">030707</F>
+				<F n="ID">41</F>
+				<F n="TABLENAME">TB_PUB_LEVY_ITEM</F>
+			</L>
+			<L>
+				<F n="NAME">其他服务业</F>
+				<F n="INNER_CODE">030708</F>
+				<F n="ID">42</F>
+				<F n="TABLENAME">TB_PUB_LEVY_ITEM</F>
+			</L>
+			<L>
+				<F n="NAME">转让土地使用权</F>
+				<F n="INNER_CODE">030801</F>
+				<F n="ID">44</F>
+				<F n="TABLENAME">TB_PUB_LEVY_ITEM</F>
+			</L>
+			<L>
+				<F n="NAME">转让专利权</F>
+				<F n="INNER_CODE">030802</F>
+				<F n="ID">45</F>
+				<F n="TABLENAME">TB_PUB_LEVY_ITEM</F>
+			</L>
+			<L>
+				<F n="NAME">转让非专利技术</F>
+				<F n="INNER_CODE">030803</F>
+				<F n="ID">46</F>
+				<F n="TABLENAME">TB_PUB_LEVY_ITEM</F>
+			</L>
+			<L>
+				<F n="NAME">转让商标权</F>
+				<F n="INNER_CODE">030804</F>
+				<F n="ID">47</F>
+				<F n="TABLENAME">TB_PUB_LEVY_ITEM</F>
+			</L>
+			<L>
+				<F n="NAME">转让著作权</F>
+				<F n="INNER_CODE">030805</F>
+				<F n="ID">48</F>
+				<F n="TABLENAME">TB_PUB_LEVY_ITEM</F>
+			</L>
+			<L>
+				<F n="NAME">转让商誉</F>
+				<F n="INNER_CODE">030806</F>
+				<F n="ID">49</F>
+				<F n="TABLENAME">TB_PUB_LEVY_ITEM</F>
+			</L>
+			<L>
+				<F n="NAME">转让其他无形资产</F>
+				<F n="INNER_CODE">030807</F>
+				<F n="ID">325</F>
+				<F n="TABLENAME">TB_PUB_LEVY_ITEM</F>
+			</L>
+			<L>
+				<F n="NAME">销售建筑物或构筑物</F>
+				<F n="INNER_CODE">030901</F>
+				<F n="ID">51</F>
+				<F n="TABLENAME">TB_PUB_LEVY_ITEM</F>
+			</L>
+			<L>
+				<F n="NAME">销售其他土地附着物</F>
+				<F n="INNER_CODE">030902</F>
+				<F n="ID">52</F>
+				<F n="TABLENAME">TB_PUB_LEVY_ITEM</F>
+			</L>
+			<L>
+				<F n="NAME">罚款收入</F>
+				<F n="INNER_CODE">0320</F>
+				<F n="ID">53</F>
+				<F n="TABLENAME">TB_PUB_LEVY_ITEM</F>
+			</L>
+			<L>
+				<F n="NAME">滞纳金</F>
+				<F n="INNER_CODE">0321</F>
+				<F n="ID">54</F>
+				<F n="TABLENAME">TB_PUB_LEVY_ITEM</F>
+			</L>
+		</M>
+	</B>
+</R>
+
+

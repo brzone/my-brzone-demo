@@ -1,0 +1,10 @@
+import "Employee.proto";
+option java_package = "gdcp.test.probuf";
+option java_outer_classname = "CompanyEntity";
+
+
+message Company {
+optional uint64 id = 1; //id    有一点需要说明，java_outer_classname不能喝message名字相同，比如这里java_outer_classname不能为Company
+repeated Employee employees = 2;
+
+}

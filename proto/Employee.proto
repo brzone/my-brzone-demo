@@ -1,0 +1,9 @@
+option java_package = "gdcp.test.probuf";
+option java_outer_classname = "EmployeeEntity";
+
+message Employee {
+optional uint64 id = 1; //id
+optional string name = 2; //name
+optional  uint32 age = 3 ;   //age
+
+}

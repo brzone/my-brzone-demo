@@ -1,0 +1,41 @@
+<html>
+	<head>
+		<title>typeof</title>
+	
+	<script>
+	
+		function	myWrite(somethings) {
+		
+			document.write(somethings + "<br/>");
+		}
+	 
+	 /**
+	 *如果一个变量，只是定义但是没有初始化，它的值就是undefined,也就是它的默认
+	 *初始化的值为undefined，如果一个变量没有定义的话，他的typeof也是undefined
+	 *
+	 */
+		
+		//undefined
+		var message;
+		
+		myWrite(message);
+		
+		//	必须不要单引号或者双引号   this is true
+		myWrite(message == undefined);
+		
+		//this is false
+		myWrite(message == "undefined");
+		
+		myWrite(typeof message); 
+		
+		myWrite(typeof age);
+		
+		
+		</script>
+	
+	
+	<head>
+	
+
+
+</html>

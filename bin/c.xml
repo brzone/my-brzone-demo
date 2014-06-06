@@ -1,0 +1,18 @@
+<R>
+	<H>
+		<F n="TRADE_IP">149.16.20.105</F>
+		<F n="TRADE_CODE">QHOUSELISTINFO</F>
+		<F n="TRADE_FLOWNO">HNDS1305182932390964</F>
+		<F n="TRADE_REQID">HNDS1305182932390131</F>
+		<F n="TRADE_STAFF_ID">dwq</F>
+		<F n="TRADE_PASSWORD">dwq</F>
+	</H>
+	<B>
+		<S>
+			<F n="ILP_NAME"></F>
+			<F n="ILP_ADDR">常德市鼎城区期(3),凭</F>
+			<F n="I_DH"></F>
+		</S>
+		<M />
+	</B>
+</R>

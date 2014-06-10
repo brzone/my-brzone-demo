@@ -66,6 +66,8 @@ public class Client implements Runnable {
 
 	public static void main(String[] args) {
 
+		System.out.println("开始 start");
+		
 		Bank bank = new Bank(100);
 		ExecutorService exec = Executors.newCachedThreadPool();
 		exec.execute(new Client(bank, 1));
@@ -73,7 +75,7 @@ public class Client implements Runnable {
 
 		exec.shutdown();
 
-
+		
 	}
 
 }

@@ -25,5 +25,6 @@
 	<classpathentry kind="lib" path="lib/slf4j/slf4j-log4j12-1.7.2.jar"/>
 	<classpathentry kind="lib" path="lib/protobuf-java-2.5.0.jar"/>
 	<classpathentry kind="lib" path="lib/mongo-2.10.1.jar"/>
+	<classpathentry kind="lib" path="lib/fastjson-1.1.26.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

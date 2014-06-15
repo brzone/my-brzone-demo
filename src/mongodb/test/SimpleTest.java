@@ -2,8 +2,11 @@ package mongodb.test;
 
 import java.net.UnknownHostException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
+import java.util.Set;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import org.bson.types.ObjectId;
@@ -17,6 +20,7 @@ import com.mongodb.DBCollection;
 import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
 import com.mongodb.Mongo;
+import com.mongodb.util.JSON;
 
 public class SimpleTest {
 	
@@ -53,16 +57,90 @@ public class SimpleTest {
 	
 
 	//@Test
-	public void testQuery() throws UnknownHostException {
+	public void testQueryMap() throws UnknownHostException {
 		
 		DBCursor cursor =  collection.find();
 		
+		List<Map> data = new ArrayList<Map>();
+		
 		while(cursor.hasNext()) {
-			System.out.println(cursor.next());
+			
+			
+			DBObject dbObj = cursor.next();
+			
+			System.out.println(dbObj);
+			
+			System.out.println("============================");
+			
+			System.out.println("name:" + dbObj.get("name"));
+			
+			Set<String> set = dbObj.keySet();
+			
+			if(set == null || set.isEmpty()) {
+				continue;
+			}
+			
+		
+			
+			int keySize = set.size();
+			
+			for(String key : set) {
+				
+				Map<String,Object> map = new HashMap<String, Object>(keySize);
+				map.put(key.toUpperCase(), dbObj.get(key));
+				data.add(map);
+			}
+			
 		}
 		println(cursor.count());
 		
+		System.out.println("-----------我就是爱分割线-----------------");
+		
+		System.out.println("data.size():" + data.size());
+		System.out.println("data:" + data);
 	}
+	
+	
+	
+	@Test
+	public void testQueryBean() throws UnknownHostException {
+		
+		DBCursor cursor =  collection.find();
+		
+		List<Person> data = new ArrayList<Person>();
+		
+		while(cursor.hasNext()) {
+			
+			
+			DBObject dbObj = cursor.next();
+			
+		
+			data.add(dbObjectToBean(dbObj,Person.class));
+			
+		}
+		println(cursor.count());
+		
+		System.out.println("-----------我就是爱分割线-----------------");
+		
+		System.out.println("data.size():" + data.size());
+		
+		for(Person p : data) {
+			System.out.println(p);
+		}
+		
+	}
+	
+	
+	public <T> T dbObjectToBean(DBObject dbObject,Class<T> clazz){
+		T info=null;
+		if(dbObject!=null){
+			Object job=com.alibaba.fastjson.JSON.toJSON(dbObject);
+			info=com.alibaba.fastjson.JSON.parseObject(job.toString(),clazz);
+		}
+		return info;
+	}
+	
+	
 	
 	//@Test
 	public void testSaveOne() {
@@ -109,7 +187,7 @@ public class SimpleTest {
 	}
 	
 	
-	@Test
+	//@Test
 	public void testRemoveBatch() {
 		
 		println("testRemoveBatch()");

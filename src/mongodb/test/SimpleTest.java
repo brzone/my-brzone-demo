@@ -102,7 +102,7 @@ public class SimpleTest {
 	
 	
 	
-	@Test
+	//@Test
 	public void testQueryBean() throws UnknownHostException {
 		
 		DBCursor cursor =  collection.find();
@@ -199,6 +199,37 @@ public class SimpleTest {
 		db.put("age", ageWhere);
 		
 		println(collection.remove(db).getN());
+	}
+	
+	
+	@Test
+	public void testIndex() {
+		
+		List<DBObject> indexList = collection.getIndexInfo();
+		
+		if(indexList == null || indexList.isEmpty()) {
+			return ;
+		}
+		
+		for(DBObject index : indexList) {
+			System.out.println("AAA:" + index);
+		}
+		
+		DBObject wantCreateIndex = new BasicDBObject();
+		wantCreateIndex.put("age", 1);
+		
+		//此方法，如果已经存在了此索引，便不会创建，也不会抛出异常
+		collection.createIndex(wantCreateIndex);
+		
+		/*for(DBObject index : indexList) {
+			
+			if(wantCreateIndex.equals(index)) {
+				System.out.println("catch it : " + index);
+			}
+			
+		}*/
+		
+		
 	}
 	
 	

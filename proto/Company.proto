@@ -4,7 +4,7 @@ option java_outer_classname = "CompanyEntity";
 
 
 message Company {
-optional uint64 id = 1; //id    有一点需要说明，java_outer_classname不能喝message名字相同，比如这里java_outer_classname不能为Company
+optional uint64 id = 1; //id    鏈変竴鐐归渶瑕佽鏄庯紝java_outer_classname涓嶈兘鍜宮essage鍚嶅瓧鐩稿悓锛屾瘮濡傝繖閲宩ava_outer_classname涓嶈兘涓篊ompany
 repeated Employee employees = 2;
 
 }

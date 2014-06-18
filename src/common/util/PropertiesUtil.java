@@ -20,7 +20,7 @@ public class PropertiesUtil {
 	
 
 	private  PropertiesUtil(){
-		throw new RuntimeException("haha,you can do this.");
+		throw new RuntimeException("haha,you can't do this.");
 	}
 	
 	/**

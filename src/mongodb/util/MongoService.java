@@ -2,14 +2,11 @@ package mongodb.util;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
 import org.bson.types.ObjectId;
-
-
-
-
 import com.mongodb.BasicDBObject;
 import com.mongodb.DB;
 import com.mongodb.DBCollection;
@@ -23,11 +20,13 @@ import common.util.StringUtil;
 /**
  * 操作mongo 数据库
  * 
- * @author lijian@cstonline.cn
+ * @author brzone@126.com
  * 
  * @date 2014年6月15日 下午6:21:05
  */
 public class MongoService {
+
+	private static CSTLogger logger = new CSTLogger(MongoService.class);
 
 	/** 主机IP */
 	private static final String HOST;
@@ -60,6 +59,7 @@ public class MongoService {
 		HOST = data.get("HOST");
 		PORT = Integer.parseInt(data.get("PORT"));
 
+		logger.logInfo("mongoDB系统配置参数:" + data);
 
 	}
 
@@ -136,7 +136,7 @@ public class MongoService {
 	public <T> T queryById(String id, final Class<T> clazz)throws Exception {
 		
 		if(StringUtil.isNullOrBlank(id)) {
-			//logger.logInfo("查询传入需要更新的id不能为空,直接返回");
+			logger.logInfo("查询传入需要更新的id不能为空,直接返回");
 			return null;
 		}
 		
@@ -186,7 +186,7 @@ public class MongoService {
 	private <T> List<T> queryCanSortOrNotTemplate(DBObject queryObj,final DBObject orderBy, final Class<T> clazz) throws Exception {
 
 		if (queryObj == null) {
-			//logger.logInfo("查询传入需要更新的DBObject不能为空,直接返回");
+			logger.logInfo("查询传入需要更新的DBObject不能为空,直接返回");
 			return null;
 		}
 
@@ -198,7 +198,7 @@ public class MongoService {
 					throws Exception {
 
 				if (dbObj == null || dbObj.length != 1) {
-					//logger.logInfo("查询操作，传入的DBObject不合法，只能包含一个元素,直接返回");
+					logger.logInfo("查询操作，传入的DBObject不合法，只能包含一个元素,直接返回");
 					return 0;
 				}
 				
@@ -220,7 +220,7 @@ public class MongoService {
 					data.add(t);
 				}
 
-				//logger.logInfo("查询出来的数量：" + data.size());
+				logger.logInfo("DBName[{}],CollectionName[{}],操作[{}],查询出来的数量[{}]" ,dbName,collectionName,"查询query", data.size());
 
 				return data;
 
@@ -231,14 +231,26 @@ public class MongoService {
 	}
 	
 	/**
-	 * 查询：根据查询对象和排序对象返回查询结果的DBObject集合
+	 * 查询：根据查询对象查询结果的DBObject集合
 	 * @param queryObj
 	 * @return
 	 * @throws Exception
 	 */
 	public List<DBObject> query(DBObject queryObj) throws Exception {
 		
-		return queryCanSortOrNotTemplate(queryObj,null);
+		return queryCanSortOrNotTemplate(queryObj,null,false,8888);
+	}
+	
+	/**
+	 * 查询：根据查询对象和限制取多少条的limit返回查询结果的DBObject集合
+	 * @param queryObj		查询对象
+	 * @param limitAmount   取多少条的limit的值
+	 * @return
+	 * @throws Exception
+	 */
+	public List<DBObject> query(DBObject queryObj,int limitAmount) throws Exception {
+		
+		return queryCanSortOrNotTemplate(queryObj,null,true,limitAmount);
 	}
 	
 	/**
@@ -249,21 +261,37 @@ public class MongoService {
 	 */
 	public List<DBObject> query(DBObject queryObj,DBObject orderBy) throws Exception {
 		
-		return queryCanSortOrNotTemplate(queryObj,orderBy);
+		return queryCanSortOrNotTemplate(queryObj,orderBy,false,8888);
 	}
 	
 	/**
-	 * 查询：根据查询对象和排序对象[如果排序对象为null的话，便不排序]返回查询结果的DBObject集合
-	 * @param queryObj 查询的obj
-	 * @param orderBy  排序的obj
+	 * 查询：根据查询对象和排序对象[如果排序对象为null的话，便不排序]、限制取多少条的limit 返回查询结果的DBObject集合
+	 * @param queryObj      查询对象
+	 * @param orderBy		排序对象
+	 * @param limitAmount   取多少条的limit的值
+	 * @return
+	 * @throws Exception
+	 */
+	public List<DBObject> query(DBObject queryObj,DBObject orderBy,int limitAmount) throws Exception {
+		
+		return queryCanSortOrNotTemplate(queryObj,orderBy,true,limitAmount);
+	}
+	
+	
+	/**
+	 * 查询：根据查询对象和排序对象[如果排序对象为null的话，便不排序],是否启用limit，返回查询结果的DBObject集合
+	 * @param queryObj      查询的obj
+	 * @param orderBy		排序的obj
+	 * @param isUseLimit    是否启用limit，true-启用，false-不启用
+	 * @param limitAmount   limit的数量，当然如果isUseLimit为false，这个值是没有用的
 	 * @return
 	 * @throws Exception
 	 */
 	@SuppressWarnings("unchecked")
-	private List<DBObject> queryCanSortOrNotTemplate(DBObject queryObj,final DBObject orderBy) throws Exception {
+	private List<DBObject> queryCanSortOrNotTemplate(DBObject queryObj,final DBObject orderBy,final boolean isUseLimit,final int limitAmount) throws Exception {
 
 		if (queryObj == null) {
-			//logger.logInfo("查询传入需要更新的DBObject不能为空,直接返回");
+			logger.logInfo("查询传入需要更新的DBObject不能为空,直接返回");
 			return null;
 		}
 
@@ -275,7 +303,7 @@ public class MongoService {
 					throws Exception {
 
 				if (dbObj == null || dbObj.length != 1) {
-					//logger.logInfo("查询操作，传入的DBObject不合法，只能包含一个元素,直接返回");
+					logger.logInfo("查询操作，传入的DBObject不合法，只能包含一个元素,直接返回");
 					return 0;
 				}
 				
@@ -288,6 +316,11 @@ public class MongoService {
 					cursor = collection.find(dbObj[0]);
 				}
 				
+				//是否limit
+				if(isUseLimit) {
+					cursor.limit(limitAmount);
+				}
+				
 				List<DBObject> data = new ArrayList<DBObject>(cursor.count());
 
 				while (cursor.hasNext()) {
@@ -297,7 +330,7 @@ public class MongoService {
 					data.add(obj);
 				}
 
-				//logger.logInfo("查询出来的数量：" + data.size());
+				logger.logInfo("DBName[{}],CollectionName[{}],操作[{}],查询出来的数量[{}]" ,dbName,collectionName,"查询query" +(orderBy != null ? " sort" : "") +(isUseLimit ? " limit":""), data.size());
 
 				return data;
 
@@ -359,7 +392,7 @@ public class MongoService {
 			final boolean multi) throws Exception {
 
 		if (oldObj == null || newObj == null) {
-			//logger.logInfo("传入需要更新的DBObject和更新后的DBOBject不能为空,直接返回");
+			logger.logInfo("传入需要更新的DBObject和更新后的DBOBject不能为空,直接返回");
 			return 0;
 		}
 
@@ -371,14 +404,14 @@ public class MongoService {
 					throws Exception {
 
 				if (dbObj == null || dbObj.length != 2) {
-					//logger.logInfo("更新操作，传入的DBObject不合法，不能为空，且只能含有二个元素,直接返回");
+					logger.logInfo("更新操作，传入的DBObject不合法，不能为空，且只能含有二个元素,直接返回");
 					return 0;
 				}
 
 				int updateAmount = collection.update(dbObj[0], dbObj[1],
 						upsert, multi).getN();
 
-				//logger.logInfo("更新的数量：" + updateAmount);
+				logger.logInfo("DBName[{}],CollectionName[{}],操作[{}],更新的数量：[{}]" ,dbName,collectionName,"更新update",updateAmount);
 
 				return updateAmount;
 
@@ -398,7 +431,7 @@ public class MongoService {
 	public int delete(DBObject dbObj) throws Exception {
 
 		if (dbObj == null) {
-			//logger.logInfo("禁止传入为null的DBObject进行全文档删除,直接返回");
+			logger.logInfo("禁止传入为null的DBObject进行全文档删除,直接返回");
 			return 0;
 		}
 
@@ -410,13 +443,13 @@ public class MongoService {
 					throws Exception {
 
 				if (dbObj == null || dbObj.length != 1) {
-					//logger.logInfo("传入的DBObject不合法，不能为空，且只能含有一个元素,直接返回");
+					logger.logInfo("传入的DBObject不合法，不能为空，且只能含有一个元素,直接返回");
 					return 0;
 				}
 
 				int removeAmount = collection.remove(dbObj[0]).getN();
 
-				//logger.logInfo("删除的数量：" + removeAmount);
+				logger.logInfo("DBName[{}],CollectionName[{}],操作[{}],删除的数量：[{}]" ,dbName,collectionName,removeAmount);
 
 				return removeAmount;
 
@@ -436,7 +469,7 @@ public class MongoService {
 	public int save(DBObject... dbObj) throws Exception {
 
 		if (dbObj == null || dbObj.length <= 0) {
-		//	logger.logInfo("传递的DBObject为空或大小为0,直接返回");
+			logger.logInfo("传递的DBObject为空或大小为0,直接返回");
 			return 0;
 		}
 
@@ -448,7 +481,7 @@ public class MongoService {
 					throws Exception {
 
 				int amount = collection.insert(Arrays.asList(dbObj)).getN();
-				//logger.logInfo("本次插入数量:" + dbObj.length + ",插入失败的数量：" + amount);
+				logger.logInfo("DBName[{}],CollectionName[{}],操作[{}],本次插入数量:[{}],插入失败的数量[{}]",dbName,collectionName,"插入save",dbObj.length,amount);
 				return amount;
 
 			}
@@ -466,7 +499,7 @@ public class MongoService {
 	public void createIndex(DBObject... dbObj)  throws Exception {
 		
 		if(dbObj == null || dbObj.length <= 0) {
-			//logger.logInfo("创建所以传递的索引DBObject为空或大小为0,直接返回");
+			logger.logInfo("创建所以传递的索引DBObject为空或大小为0,直接返回");
 			return;
 		}
 		
@@ -481,13 +514,80 @@ public class MongoService {
 					//此方法，如果已经存在了此索引，便不会创建，也不会抛出异常，故不需要判断是否存在了
 					collection.createIndex(indexDB);
 				}
-				//logger.logInfo("创建索引完毕，传递的创建索引的数量：" + dbObj.length);
+				logger.logInfo("创建索引完毕，传递的创建索引的数量：" + dbObj.length);
 				return dbObj.length;
 
 			}
 		}, dbObj);
 		
 		
+	}
+	
+	/**
+	 * 通过字段key进行去重，然后返回该集合的数量
+	 * @param key
+	 * @return
+	 * @throws Exception
+	 */
+	public int distinct(String key)  throws Exception {
+		return distinctCountTemplage(key,null);
+		
+	}
+	
+	/**
+	 * 通过字段key进行去重，并在查询条件query下，然后返回该集合的数量
+	 * @param key
+	 * @param query
+	 * @return
+	 * @throws Exception
+	 */
+	public int distinct(String key,DBObject query)  throws Exception {
+		return distinctCountTemplage(key,query);
+		
+	}
+	
+	
+	/**
+	 * 通过字段key进行去重，查询条件query[如果为空，则不添加查询条件]，然后返回该集合的数量
+	 * @param key
+	 * @param query
+	 * @return
+	 * @throws Exception
+	 */
+	private int distinctCountTemplage(final String key,final DBObject query)  throws Exception {
+		
+		if(StringUtil.isNullOrBlank(key)) {
+			logger.logInfo("distinct操作，传入的distinct字段key不能为空或者空字符");
+			return 0;
+		}
+		
+		Object result = this.executeTemplate(new MongoExecuteCallBack(){
+
+			@SuppressWarnings("unchecked")
+			@Override
+			public Object execute(MongoClient mg, DB db,
+					DBCollection collection, DBObject... dbObj)
+					throws Exception {
+				
+				List<Object> list = null;
+				
+				if(query == null ) {
+					list = collection.distinct(key);
+				 } else {
+					 list = collection.distinct(key, query);
+				 }
+				
+				int amount = (list == null || list.isEmpty()) ? 0 : list.size();
+				
+				logger.logInfo("DBName[{}],CollectionName[{}],操作[{}] 查询到的key[{}]distinct的数量为：[{}]",dbName,collectionName,"distinct",key,amount);
+				
+				return amount;
+				
+			}});
+		
+		
+		
+		return (Integer)result;
 	}
 	
 
@@ -502,6 +602,9 @@ public class MongoService {
 	public Object executeTemplate(MongoExecuteCallBack executer,
 			DBObject... dbObj) throws Exception {
 
+		//执行开始时间
+		Date start = new Date();
+		
 		MongoClient mg = null;
 
 		DB db = null;
@@ -521,7 +624,8 @@ public class MongoService {
 		} catch (Exception e) {
 
 			e.printStackTrace();
-			//logger.logError("根据host[{}]和port[{}]创建MongoClient失败[{}]", HOST,PORT, e);
+			logger.logError("根据host[{}]和port[{}]执行Mongo操作失败[{}]", HOST,
+					PORT, e);
 			throw e;
 		} finally {
 
@@ -530,6 +634,11 @@ public class MongoService {
 			}
 
 		}
+		
+		//执行结束时间
+		Date end = new Date();
+		
+		logger.logInfo("======执行Mongo操作耗时[{}]毫秒",(end.getTime()-start.getTime()));
 
 		return returnObj;
 

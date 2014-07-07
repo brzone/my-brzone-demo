@@ -2,17 +2,23 @@ package mongodb.test;
 
 import java.net.UnknownHostException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicInteger;
 
+import mongodb.util.MongoService;
+
 import org.bson.types.ObjectId;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import util.DateUtil;
 
 import com.mongodb.BasicDBObject;
 import com.mongodb.DB;
@@ -20,6 +26,7 @@ import com.mongodb.DBCollection;
 import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
 import com.mongodb.Mongo;
+import com.mongodb.MongoClient;
 import com.mongodb.util.JSON;
 
 public class SimpleTest {
@@ -34,7 +41,7 @@ public class SimpleTest {
 	
 	private AtomicInteger ageAtomic = new AtomicInteger(0);
 	
-	@Before
+	//@Before
 	public void init() throws UnknownHostException {
 		
 		mongo = new Mongo();
@@ -45,7 +52,7 @@ public class SimpleTest {
 	}
 	
 	
-	@After
+	//@After
 	public void close() {
 		
 		if(mongo != null) {
@@ -202,7 +209,7 @@ public class SimpleTest {
 	}
 	
 	
-	@Test
+	//@Test
 	public void testIndex() {
 		
 		List<DBObject> indexList = collection.getIndexInfo();
@@ -229,6 +236,94 @@ public class SimpleTest {
 			
 		}*/
 		
+		
+	}
+	
+	@Test
+	public void testDistinctCount() throws Exception {
+		//MongoService service = MongoService.getServiceByGDCPDBNameAndColName("oldOriData");
+		
+		MongoClient mg = new MongoClient("192.168.1.132", 27017);
+
+		DB db = mg.getDB("gdcp");
+
+		DBCollection collectionA = db.getCollection("oldOriData");
+
+		
+	/*	List<Object> data = collection.distinct("devcode");
+
+		if(data == null || data.isEmpty()) {
+			println("data == null || data.isEmpty()");
+			mg.close();
+			return;
+		}
+		
+		println(data.size());
+		println(data.get(0).getClass());
+		
+		for(Object obj : data) {
+			//println(obj);
+		}*/
+		
+		println("===================================");
+		
+		DBObject query = new BasicDBObject();
+		
+		BasicDBObject objTime = new BasicDBObject();
+		
+		println(DateUtil.formatYYYYMMDDHHMMSS(DateUtil.parseYYYYMMDD("2014-04-27")));
+		
+		println(new Date());
+		
+		objTime.append("$gt",DateUtil.parseYYYYMMDD("2014-04-27"));
+		objTime.append("$lt",DateUtil.parseYYYYMMDD("2014-05-01"));
+		
+		query.put("obdTime", objTime);
+		
+		println(query);
+		
+		List<Object>  queryList =  collectionA.distinct("devcode", query);
+		
+		
+		if(queryList == null || queryList.isEmpty()) {
+			println("queryList == null || queryList.isEmpty()");
+			mg.close();
+			return;
+		}
+		
+		println(queryList.size());
+		for(Object obj : queryList) {
+			//println(obj);
+		}
+		
+		
+		mg.close();
+		
+	}
+	
+	//@Test
+	public void testInsertDate() throws Exception {
+		MongoService service =  MongoService.getServiceByGDCPDBNameAndColName("haha");
+		
+		/**
+		 * 
+		 * 插入的时候，时间会减8小时，读取的时候，时间会加八小时，且查询的时候，时间参数会减八小时
+		 */
+		
+		/*DBObject obj = new BasicDBObject();
+		obj.put("name", "scott");
+		obj.put("insertDate", new Date());
+		
+		service.save(obj);
+		
+		println("save ok");;*/
+		
+	
+		List<DBObject> list = service.query(new BasicDBObject("name", "scott"));
+		
+		for(DBObject db : list) {
+			println(db.get("insertDate"));
+		}
 		
 	}
 	

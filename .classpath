@@ -26,5 +26,6 @@
 	<classpathentry kind="lib" path="lib/protobuf-java-2.5.0.jar"/>
 	<classpathentry kind="lib" path="lib/mongo-2.10.1.jar"/>
 	<classpathentry kind="lib" path="lib/fastjson-1.1.26.jar"/>
+	<classpathentry kind="lib" path="lib/mina/mina-core-2.0.7.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

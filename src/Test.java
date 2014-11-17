@@ -2,9 +2,18 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
 public class Test {
+	
+	public static void test(String... args) {
+		
+		System.out.println(args == null);
+		
+	}
+	
 
 	public static void main(String[] args) throws ParseException {
 		
+		
+		test(null);
 		
 		String ip = "127.0.0.1";
 
@@ -79,13 +88,13 @@ public class Test {
 		String[] aArr = a.split(",");
 		System.out.println(aArr.length +"\t" + aArr[0]);*/
 
-		String a = "  ";
+		/*String a = "  ";
 
 		String[] b = a.split(",");
 
 		System.out.println(b.length);
 
-		System.out.println("======" + b[0] + "======");
+		System.out.println("======" + b[0] + "======");*/
 
 
 

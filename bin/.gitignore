@@ -23,6 +23,7 @@
 /clone/
 /com/
 /comandpattern/
+/common/
 /concurrency20120718/
 /connectionpool/
 /countdownlatch/
@@ -54,16 +55,5 @@
 /proxy/
 /queue/
 /readwriteexcel/
-/reflect/
-/saxparsexml/
-/scheduledthreadpoolexecutor/
-/simulationbank/
-/slf4j/
-/socket/
-/stream/
-/thread/
-/thread20140331/
-/timer/
-/url/
-/properties/
-/common/
+/mina/
+/designpatterns/
